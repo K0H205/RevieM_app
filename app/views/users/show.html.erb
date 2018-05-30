@@ -1,0 +1,17 @@
+<p>
+  <%= @user.name %>
+  <% if currentuser_correct? %>
+    <%= link_to "edit", edit_user_path %>
+    <%= link_to "delete", @user , :method => :delete %>
+  <% end %>
+  <% if @user.microposts.any? %>
+    <h3>投稿数は合計<%= @user.microposts.count %>つ</h3>
+    <% @microposts.each do |micropost| %>
+      <p><%= micropost.content %>(<%= micropost.updated_at %>)
+      <% if currentuser_correct? %>
+        <%= link_to "削除", micropost , method: :delete,data: { confirm: "You sure?" } %>
+      <% end %>
+      </p>
+    <% end %>
+   <% end %>
+</p>

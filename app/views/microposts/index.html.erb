@@ -1,0 +1,5 @@
+
+<h1>みんなの作品一覧</h1>
+<% @microposts.each do |micropost| %>
+  <p><%= micropost.content %> 作者 <%= link_to micropost.user.name, micropost.user %></p>
+<% end %>
