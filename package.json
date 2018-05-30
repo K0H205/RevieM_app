@@ -2,4 +2,7 @@
   "name": "haiku_app",
   "private": true,
   "dependencies": {}
+  "engines": {
+    "yarn": "1.7.0",
+  }
 }
