@@ -1,9 +1,13 @@
 {
   "name": "haiku_app",
   "private": true,
-  "dependencies": {}
-  "engines"{
+  "dependencies": {
+
+
+    
+  }
+    "engines": {
     "yarn": "1.7.0",
-    "node": "10.3.0",
-  },
+    "node": "8.9.4"
+  }
 }
