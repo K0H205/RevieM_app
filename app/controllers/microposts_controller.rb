@@ -10,7 +10,7 @@ before_action :logged_in_user, only:[:new,:create,:destroy]
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "投稿完了しました。"
-      redirect_to users_path
+      redirect_to microposts_path
     end
   end
 

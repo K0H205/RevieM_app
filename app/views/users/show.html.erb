@@ -1,4 +1,5 @@
-<p>
+<div class="row">
+ <div class="col-md-6 >
   <%= @user.name %>
   <% if currentuser_correct? %>
     <%= link_to "edit", edit_user_path %>
@@ -14,4 +15,5 @@
       </p>
     <% end %>
    <% end %>
-</p>
+ </div>
+</div>
