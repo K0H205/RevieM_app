@@ -2,15 +2,15 @@
   <div class="panel-heading">REVIEWS</div>
   <div class="panel-body">
     <% @microposts.each do |micropost| %>
-    <div class="well">
-      <span class="content">
-        <%= image_tag micropost.picture.url if micropost.picture? %>
-        <%= link_to micropost.user.name, micropost.user %>
-        <h><%= micropost.content %></h>
-      </span>
-      <span id="like-of-<%= micropost.id %>">
+    <div class="well pull-left">
+      <ul class="media-list ">
+        <li><%= image_tag micropost.picture.url if micropost.picture? %>
+        <li><%= link_to micropost.user.name, micropost.user %>
+        <li><%= micropost.content %>
+        <li><%= micropost.stars %>
+      <li id="like-of-<%= micropost.id %>">
         <%= render 'likes/like', micropost: micropost %>
-      </span>
+      </li>
     </div>
     <% end %>
   </div>

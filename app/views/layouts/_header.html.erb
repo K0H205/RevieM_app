@@ -1,0 +1,16 @@
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-warning " href="#">ReviewM</a>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "REVIEWS",root_path %>
+        <% if logged_in? %>
+        <li><%= link_to "LOGOUT",logout_path,method: :delete %>
+        <li><%= link_to "POST",new_micropost_path %>
+          <li><%= link_to "MYPAGE", "/users/#{current_user.id}" %>
+            <% else %>
+            <li><%= link_to "LOGIN",login_path %>
+              <% end %>
+            </ul>
+          </div>
+        </div>

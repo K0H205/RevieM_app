@@ -7,7 +7,6 @@ class Micropost < ApplicationRecord
   has_many :iine_users, through: :likes, source: :user
   mount_uploader :picture, PictureUploader
 
-
     def iine(user)
       likes.create(user_id: user.id)
     end

@@ -7,16 +7,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   </head>
-  <li><%= link_to "REVIEWS",root_path %>
-  <% if logged_in? %>
-    <li><%= link_to "LOGOUT",logout_path, :method => :delete %>
-    <li><%= link_to "POST",'/microposts/new' %>
-    <li><%= link_to "MYPAGE", "/users/#{current_user.id}" %>
-  <% else %>
-    <li><%= link_to "LOGIN",login_path %>
-  <% end %>
-<% else %>
   <body>
+    <%= render 'layouts/header' %>
     <div class="container">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>

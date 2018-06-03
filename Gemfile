@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.0'
 gem 'bcrypt',         '3.1.11'
 # Use sqlite3 as the database for Active Record
 gem 'jquery-rails', '4.3.1'
-# Use Puma as the app server
+#Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
