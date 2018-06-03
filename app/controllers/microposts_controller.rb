@@ -26,6 +26,6 @@ before_action :logged_in_user, only:[:new,:create,:destroy]
 
   private
   def micropost_params
-    params.require(:micropost).permit(:content)
+    params.require(:micropost).permit(:content,:picture)
   end
 end

@@ -1,22 +1,17 @@
-
-<h1>作品一覧</h1>
-
+<div class="panel panel-default">
+  <div class="panel-heading">REVIEWS</div>
+  <div class="panel-body">
     <% @microposts.each do |micropost| %>
-    <div class="box1">
-      <p><%= micropost.content %></p>
-      <% if micropost.iine?(current_user) %>
-        <%= form_for(micropost.likes.find_by(user_id: current_user.id), method: :delete) do |f| %>
-          <%= button_tag(class: "btn btn-default btn-xs") do %>
-            <%= content_tag :span, micropost.likes.count, class: "glyphicon glyphicon-heart" %>
-          <% end%>
-        <% end %>
-      <% else %>
-        <%= form_for(micropost.likes.build,url: likes_path) do |f| %>
-          <div><%= hidden_field_tag :micropost_id, micropost.id %></div>
-          <%= button_tag(class: "btn btn-default btn-xs") do %>
-            <%= content_tag :span, micropost.likes.count, class: "glyphicon glyphicon-heart-empty" %>
-          <% end %>
-        <% end %>
-      <% end %>
-      <p>作者 <%= link_to micropost.user.name, micropost.user %></p>
-    </div><% end %>
+    <div class="well">
+      <span class="content">
+        <%= image_tag micropost.picture.url if micropost.picture? %>
+        <%= link_to micropost.user.name, micropost.user %>
+        <h><%= micropost.content %></h>
+      </span>
+      <span id="like-of-<%= micropost.id %>">
+        <%= render 'likes/like', micropost: micropost %>
+      </span>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       #success
       log_in @user
       flash[:info] = "Please check your email to activate your account."
-      redirect_to users_path
+      redirect_to root_path
     else
       #failure
       render 'new'
