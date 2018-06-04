@@ -5,17 +5,8 @@
     <%= f.text_area :content, placeholder: "Compose new micropost...", class: 'form-control' %>
     <%= f.label :picture %>
     <%= f.file_field :picture %>
-    <%= f.label :stars,1 %>
-    <%= f.radio_button :stars,1 %>
-    <%= f.label :stars,2 %>
-    <%= f.radio_button :stars,2%>
-    <%= f.label :stars,3 %>
-    <%= f.radio_button :stars,3 %>
-    <%= f.label :stars,4 %>
-    <%= f.radio_button :stars,4 %>
-    <%= f.label :stars,5 %>
-    <%= f.radio_button :stars,5%>
-
+    <%= f.label :stars%>
+    <%= f.select :stars, {'★１' => 1 , '★２' => 2,'★3' => 3,'★4' => 4,'★5' => 5}%>
   </div>
     <%= f.submit "Post", class: "btn btn-primary btn-block" %>
 <% end %>

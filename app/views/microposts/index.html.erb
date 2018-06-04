@@ -1,3 +1,5 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 <div class="panel panel-default">
   <div class="panel-heading">REVIEWS</div>
   <div class="panel-body">
@@ -7,7 +9,12 @@
         <li><%= image_tag micropost.picture.url if micropost.picture? %>
         <li><%= link_to micropost.user.name, micropost.user %>
         <li><%= micropost.content %>
-        <li><%= micropost.stars %>
+        <li><% (micropost.stars.to_i).times do |s| %>
+          <span class = "glyphicon glyphicon-star"></span>
+          <% end %>
+          <% (5-micropost.stars.to_i).times do |s| %>
+            <span class = "glyphicon glyphicon-star-empty"></span>
+          <% end %>
       <li id="like-of-<%= micropost.id %>">
         <%= render 'likes/like', micropost: micropost %>
       </li>
@@ -15,3 +22,5 @@
     <% end %>
   </div>
 </div>
+</div>
+</div
