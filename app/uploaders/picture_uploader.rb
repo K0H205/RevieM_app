@@ -1,7 +1,7 @@
 class PictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   #サイズがオーバーした際に指定のサイズにリサイズする
-  process resize_to_limit: [350, 350]
+  process resize_to_limit: [300, 300]
 
   storage :file
 
