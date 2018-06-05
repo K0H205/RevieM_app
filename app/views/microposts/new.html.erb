@@ -4,9 +4,18 @@
     <%= f.label :content %>
     <%= f.text_area :content, placeholder: "Compose new micropost...", class: 'form-control' %>
     <%= f.label :picture %>
-    <%= f.file_field :picture %>
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     <%= f.label :stars%>
     <%= f.select :stars, {'★１' => 1 , '★２' => 2,'★3' => 3,'★4' => 4,'★5' => 5}%>
   </div>
     <%= f.submit "Post", class: "btn btn-primary btn-block" %>
 <% end %>
+
+<script type="text/javascript">
+  $('#micropost_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>
