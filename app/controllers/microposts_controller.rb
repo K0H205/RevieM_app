@@ -9,7 +9,7 @@ before_action :logged_in_user, only:[:new,:create,:destroy]
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
-      flash[:success] = "投稿完了しました。"
+      flash[:success] = "投稿完了しました"
       redirect_to microposts_path
     end
   end
@@ -20,7 +20,7 @@ before_action :logged_in_user, only:[:new,:create,:destroy]
 
   def destroy
     Micropost.find(params[:id]).destroy
-    flash[:success] = "削除しました"
+    flash[:success] = "投稿を削除しました"
     redirect_to request.referrer || root_url
   end
 
