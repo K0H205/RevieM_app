@@ -7,10 +7,11 @@
     <div class="well pull-left">
       <ul class="media-list ">
         <li><%= image_tag micropost.picture.url if micropost.picture? %>
-        <li><%= link_to micropost.user.name, micropost.user %>
+            <li><span class = "glyphicon glyphicon-user gray"></span>
+      <%= link_to micropost.user.name, micropost.user %>
         <li><%= micropost.content %>
         <li><% (micropost.stars.to_i).times do |s| %>
-          <span class = "glyphicon glyphicon-star"></span>
+          <span class = "glyphicon glyphicon-star red"></span>
           <% end %>
           <% (5-micropost.stars.to_i).times do |s| %>
             <span class = "glyphicon glyphicon-star-empty"></span>
@@ -23,4 +24,4 @@
   </div>
 </div>
 </div>
-</div
+</div>

@@ -5,6 +5,7 @@ class Micropost < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   has_many :likes, dependent: :destroy
   has_many :iine_users, through: :likes, source: :user
+  validates :picture,presence: true
   mount_uploader :picture, PictureUploader
 
     def iine(user)

@@ -6,7 +6,7 @@
     <%= f.label :picture %>
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     <%= f.label :stars%>
-    <%= f.select :stars, {'★１' => 1 , '★２' => 2,'★3' => 3,'★4' => 4,'★5' => 5}%>
+    <%= f.select :stars, {'★1' => 1 , '★2' => 2,'★3' => 3,'★4' => 4,'★5' => 5}%>
   </div>
     <%= f.submit "Post", class: "btn btn-primary btn-block" %>
 <% end %>

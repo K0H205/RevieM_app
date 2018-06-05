@@ -1,19 +1,15 @@
 <h1>UserEdit</h1>
 <%= form_for(@user) do |f|%>
-<ul>
-      
-      <li><%= f.label :name %>
-      <li><%= f.text_field :name, class: 'form-control' %>
-
-      <li><%= f.label :email %>
-      <li><%= f.email_field :email, class: 'form-control' %>
-
-      <li><%= f.label :password %>
-      <li><%= f.password_field :password, class: 'form-control' %>
-
-      <li><%= f.label :password_confirmation, "Confirmation" %>
-      <li><%= f.password_field :password_confirmation, class: 'form-control' %>
-
-      <li><%= f.submit "SaveChange", class: "btn btn-primary" %>
-    </ul>
+<form class="form-horizontal">
+  <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.submit "SaveChange", class: "btn btn-primary" %>
+    </div>
 <% end %>
