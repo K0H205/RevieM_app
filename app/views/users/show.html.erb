@@ -1,8 +1,4 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-<div class="panel panel-default">
-  <div class="panel-heading">
-  <span class = "glyphicon glyphicon-user gray"></span>
+<p><span class = "glyphicon glyphicon-user gray"></span>
   <%= @user.name %>
   <% if currentuser_correct? %>
     <%= link_to "edit?", edit_user_path %>
@@ -10,17 +6,16 @@
   <% end %>
   <% if @user.microposts.any? %>
     (<%= @user.microposts.count %>POSTS)
-  </div>
-  <div class="panel-body">
+  </p>
     <% @microposts.each do |micropost| %>
     <div class="well pull-left">
       <ul class="media-list ">
         <li><%= image_tag micropost.picture.url if micropost.picture? %>
         <li><%= micropost.content %>
-        <li><% (micropost.stars.to_i).times do |s| %>
+        <li><% (micropost.stars.to_i).times do |i|%>
           <span class = "glyphicon glyphicon-star red"></span>
           <% end %>
-          <% (5-micropost.stars.to_i).times do |s| %>
+          <% (5-micropost.stars.to_i).times do |i|%>
           <span class = "glyphicon glyphicon-star-empty"></span>
           <% end %>
           <%= content_tag :li, micropost.likes.count, class: "glyphicon glyphicon-heart red" %>
