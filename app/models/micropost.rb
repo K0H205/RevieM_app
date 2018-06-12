@@ -20,6 +20,14 @@ class Micropost < ApplicationRecord
       iine_users.include?(user)
     end
 
+    def self.search(search)
+      if search
+        where("stars=?",search)#入力された値と同じ星の数の投稿を返す
+      else
+        all 
+      end
+    end
+
     def picture_size
       if picture.size > 5.megabytes
         errors.add(:picture, "should be less than 5MB")

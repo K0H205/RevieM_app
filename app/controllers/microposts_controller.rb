@@ -15,7 +15,7 @@ before_action :logged_in_user, only:[:new,:create,:destroy]
   end
 
   def index
-    @microposts = Micropost.all
+    @microposts = Micropost.paginate(page: params[:page]).search(params[:search])
   end
 
   def destroy
@@ -24,8 +24,11 @@ before_action :logged_in_user, only:[:new,:create,:destroy]
     redirect_to request.referrer || root_url
   end
 
+  def serch
+  end
+
   private
   def micropost_params
-    params.require(:micropost).permit(:content,:picture,:stars)
+    params.require(:micropost).permit(:content,:picture,:stars,:serch)
   end
 end

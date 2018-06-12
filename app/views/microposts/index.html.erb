@@ -1,6 +1,12 @@
+<p>検索</p>
+  <%= form_tag(microposts_path,:method => 'get') do %>
+    <%= number_field_tag :search %>
+    <%= submit_tag 'Search', :stars => nil %>
+  <% end %>
+  <%= will_paginate %>
 <% @microposts.each do |micropost| %>
     <div class="well pull-left">
-      <ul class="media-list ">
+  <ul class="media-list ">
         <li><%= image_tag micropost.picture.url if micropost.picture? %>
             <li><span class = "glyphicon glyphicon-user gray"></span>
       <%= link_to micropost.user.name, micropost.user %>
@@ -17,3 +23,4 @@
     </div>
     <% end %>
   </div>
+
