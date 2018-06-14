@@ -24,11 +24,9 @@ before_action :logged_in_user, only:[:new,:create,:destroy]
     redirect_to request.referrer || root_url
   end
 
-  def serch
-  end
-
   private
   def micropost_params
     params.require(:micropost).permit(:content,:picture,:stars,:serch)
   end
 end
+
