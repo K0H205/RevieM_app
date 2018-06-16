@@ -1,26 +1,49 @@
-<p>検索</p>
-  <%= form_tag(microposts_path,:method => 'get') do %>
-    <%= number_field_tag :search %>
-    <%= submit_tag 'Search', :stars => nil %>
-  <% end %>
-  <%= will_paginate %>
-<% @microposts.each do |micropost| %>
-    <div class="well pull-left">
-  <ul class="media-list ">
-        <li><%= image_tag micropost.picture.url if micropost.picture? %>
-            <li><span class = "glyphicon glyphicon-user gray"></span>
-      <%= link_to micropost.user.name, micropost.user %>
-        <li><%= micropost.content %>
-        <li><% (micropost.stars.to_i).times do |s| %>
-          <span class = "glyphicon glyphicon-star red"></span>
-          <% end %>
-          <% (5-micropost.stars.to_i).times do |s| %>
-            <span class = "glyphicon glyphicon-star-empty"></span>
-          <% end %>
-      <li id="like-of-<%= micropost.id %>">
-        <%= render 'likes/like', micropost: micropost %>
-      </li>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <p>検索</p>
+      <%= form_tag(microposts_path,:method => 'get') do %>
+        <%= number_field_tag :search %>
+        <%= submit_tag 'Search', :stars => nil %>
+      <% end %>
+      <div class="slideSet">
+        <% @micropost.each_with_index do |micropostp,i|%>
+          <div class = "slide#{i+1}">
+            <% image_tag micropostp.picture.url if micropostp.picture? %>
+          </div>
+        <% end %>
+      </div>
+      <%= will_paginate %>
+        <% @microposts.each do |micropost| %>
+        <div class="panel panel-default">
+        <div class="panel-body">
+          <ul class="media-list">
+          <li class="media">
+          <a class = "media-left media-bottom">
+            <%= image_tag micropost.picture.url if micropost.picture? %>
+          </a>
+          <div class = "media-body ">
+            <h3>
+              <span class = "glyphicon glyphicon-user gray"></span>
+              <%= link_to micropost.user.name, micropost.user %>
+            </h3>
+            <% (micropost.stars.to_i).times do |s| %>
+              <span class = "glyphicon glyphicon-star red"></span>
+            <% end %>
+            <% (5-micropost.stars.to_i).times do |s| %>
+              <span class = "glyphicon glyphicon-star-empty"></span>
+            <% end %>
+            <%= micropost.content %>
+            <a id="like-of-<%= micropost.id %>">
+              <%= render 'likes/like', micropost: micropost %>
+            </a>
+          </div>
+        </li>
+        </ul>
+        </div>
+        </div>
+         <% end %>
+        </div>
+      </div>
     </div>
-    <% end %>
   </div>
-
+</div>
