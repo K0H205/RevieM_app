@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
     describe 'user varidates check' do
       it 'user varidates' do
         @user.email = 'test@example.com'
-        @user.password="testpassword"
+        @user.password="password"
         expect(@user.valid?).to eq(true)
       end
   
