@@ -1,11 +1,11 @@
 class Micropost < ApplicationRecord
   belongs_to :user
-  validates :user_id, presence: true
-  validates :content, presence: true, length: { maximum: 50 }
-  default_scope -> { order(created_at: :desc) }
   has_many :likes, dependent: :destroy
   has_many :iine_users, through: :likes, source: :user
+  validates :user_id, presence: true
+  validates :content, presence: true, length: { maximum: 50 }
   validates :picture,presence: true
+  default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
 
     #選択したmicropost上にlikeを付与する。user_idは受け取ったcurrent_userのidを適用する
