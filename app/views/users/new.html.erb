@@ -1,8 +1,8 @@
 <h1>SignUp</h1>
-<%= form_for(@user) do |f|%>
-<form class="form-horizontal">
-  <div class="form-group">
-    <%= f.label :name %>
+<%= form_with(model: @user) do |f|%>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
@@ -12,4 +12,5 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     </div>
       <%= f.submit "AccountCreate", class: "btn btn-primary btn-block" %>
-    <% end %>
+  </form>
+<% end %>
