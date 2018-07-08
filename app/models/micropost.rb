@@ -9,17 +9,17 @@ class Micropost < ApplicationRecord
   mount_uploader :picture, PictureUploader
 
     #選択したmicropost上にlikeを付与する。user_idは受け取ったcurrent_userのidを適用する
-    def iine(user)
+    def likeadd(user)
       likes.create(user_id: user.id)
     end
 
      #選択したmicropost上のlikeをcurrent_userのidで検索し、likeを解除する
-    def uniine(user)
+    def likedel(user)
       likes.find_by(user_id: user.id).destroy
     end
 
     #current_userがいいねしているか確認する
-    def iine?(user)
+    def like?(user)
       iine_users.include?(user)
     end
 

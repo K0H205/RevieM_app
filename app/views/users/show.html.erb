@@ -13,12 +13,12 @@
         <li><%= image_tag micropost.picture.url if micropost.picture? %>
         <li><%= micropost.content %>
         <li><% (micropost.stars.to_i).times do |i|%>
-          <span class = "glyphicon glyphicon-star red"></span>
+          <span class = "fa fa-star red"></span>
           <% end %>
           <% (5-micropost.stars.to_i).times do |i|%>
-          <span class = "glyphicon glyphicon-star-empty"></span>
+          <span class = "fa fa-star-o"></span>
           <% end %>
-          <%= content_tag :li, micropost.likes.count, class: "glyphicon glyphicon-heart red" %>
+          <%= content_tag :li, micropost.likes.count, class: "fa fa-heart red" %>
           <% if currentuser_correct? %>
         <li><%= link_to "delete?", micropost , method: :delete,data: { confirm: "You sure?" } %>
         </ul>

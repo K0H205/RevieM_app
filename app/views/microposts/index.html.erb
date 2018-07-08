@@ -27,10 +27,10 @@
               <%= link_to micropost.user.name, micropost.user %>
             </h3>
             <% (micropost.stars.to_i).times do |s| %>
-              <span class = "glyphicon glyphicon-star red"></span>
+              <span class = "fa fa-star red"></span>
             <% end %>
             <% (5-micropost.stars.to_i).times do |s| %>
-              <span class = "glyphicon glyphicon-star-empty"></span>
+              <span class = "fa fa-star-o"></span>
             <% end %>
             <%= micropost.content %>
             <a id="like-of-<%= micropost.id %>">

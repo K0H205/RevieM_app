@@ -17,6 +17,7 @@ gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.1.1'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'rspec-rails'
