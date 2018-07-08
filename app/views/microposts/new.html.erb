@@ -5,8 +5,8 @@
       <span class="input-group-addon">投稿内容</span>
       <%= f.text_area :content, placeholder: "テキスト入力欄", class: 'form-control' %>
     </div>
-    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png',class: 'btn-prima' %>
-    <%= f.select :stars, {'★1' => 1 , '★2' => 2,'★3' => 3,'★4' => 4,'★5' => 5}%>
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'btn-prima' %>
+    <%= f.select :stars, {'★1' => 1 , '★2' => 2, '★3' => 3, '★4' => 4, '★5' => 5}%>
   </div>
     <%= f.submit "Post", class: "btn btn-primary btn-block" %>
 <% end %>
