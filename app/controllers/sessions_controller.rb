@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to microposts_path
     else
-      render ':new'
+      render :new
     end
   end
 
