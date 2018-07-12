@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       #failure
-      render 'new'
+      render ':new'
     end
   end
 
